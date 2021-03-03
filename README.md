@@ -19,9 +19,11 @@
 
 > dotnet run -1 http://example.com/
 
+*Result: The first argument must be a integer in the range 1 to 2147483647*
+
 > dotnet run a http://example.com/
 
-*Result: The first argument must be a number in the range 1 to 2147483647*
+*Result: The first argument must be a integer
 
 > dotnet run 1 http://example.com/ 1
 

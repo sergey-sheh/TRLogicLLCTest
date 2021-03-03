@@ -11,7 +11,7 @@ namespace MyBinary.Queries
                 }
                 int interval = Convert.ToInt32(requests[0]);
                 if(interval < 1){
-                    throw new ArgumentOutOfRangeException($"The first argument must be a number in the range 1 to {int.MaxValue}");
+                    throw new ArgumentOutOfRangeException($"The first argument must be a integer in the range 1 to {int.MaxValue}");
                 }
                 return new GetHealthcheckRequest(){
                     Interval = interval,
@@ -19,7 +19,7 @@ namespace MyBinary.Queries
                 };
             }
             catch(FormatException e){
-                throw new FormatException($"The first argument must be a number in the range 1 to {int.MaxValue}", e);
+                throw new FormatException($"The first argument must be a integer", e);
             }
             
             
