@@ -7,8 +7,7 @@ namespace MyBinary
 {
     class Program
     {
-        static async Task Main(string[] args) => await MainAsync(args);
-        private static async Task MainAsync(string[] args){
+        static async Task Main(string[] args){
             var healthcheckHandler = new HealthcheckHandler();
             var getHealthcheckRequestHandler = new GetHealthcheckRequestHandler();
             try{
