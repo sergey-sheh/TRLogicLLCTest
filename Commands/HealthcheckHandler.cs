@@ -6,7 +6,7 @@ using MyBinary.Queries;
 
 namespace MyBinary.Commands
 {
-    public class HealthcheckHandler : IHealthcheckHandler
+    public class HealthcheckHandler
     {
         public IGetUrlStatusCodeHandler getUrlStatusCodeHandler { get; set; }
         public IHealthcheckResultHandler healthcheckResultHandler { get; set; }
@@ -15,7 +15,7 @@ namespace MyBinary.Commands
             this.getUrlStatusCodeHandler = new GetUrlStatusCodeHandler();
             this.healthcheckResultHandler = new HealthcheckResultHandler();
         }
-        public async Task Handle(HealthcheckRequest request){
+        public async Task Handle(GetHealthcheckRequest request){
             while(true){
                 healthcheckResultHandler.Handle(new HealthcheckResult(){
                     Url = request.Url,
@@ -24,8 +24,5 @@ namespace MyBinary.Commands
                 Thread.Sleep(request.Interval * 1000);
             }
         }
-    }
-    public interface IHealthcheckHandler{
-        Task Handle(HealthcheckRequest request);
     }
 }

@@ -6,7 +6,7 @@ namespace MyBinary.Queries
 {
     public class GetUrlStatusCodeHandler : IGetUrlStatusCodeHandler
     {
-        public async Task<int> Handle(HealthcheckRequest request){
+        public async Task<int> Handle(GetHealthcheckRequest request){
             var client = new HttpClient();
             try{
                 var response = await client.GetAsync(request.Url);
@@ -23,6 +23,6 @@ namespace MyBinary.Queries
     }
     public interface IGetUrlStatusCodeHandler
     {
-        Task<int> Handle(HealthcheckRequest request);
+        Task<int> Handle(GetHealthcheckRequest request);
     }
 }

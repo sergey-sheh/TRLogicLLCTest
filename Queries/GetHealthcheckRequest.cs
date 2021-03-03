@@ -1,6 +1,6 @@
 namespace MyBinary.Queries
 {
-    public class HealthcheckRequest
+    public class GetHealthcheckRequest
     {
         public int Interval { get; set; }
         public string Url { get; set; }

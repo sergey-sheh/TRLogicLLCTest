@@ -10,9 +10,9 @@ namespace MyBinary
         static async Task Main(string[] args) => await MainAsync(args);
         private static async Task MainAsync(string[] args){
             var healthcheckHandler = new HealthcheckHandler();
-            var healthcheckRequestHandler = new HealthcheckRequestHandler();
+            var getHealthcheckRequestHandler = new GetHealthcheckRequestHandler();
             try{
-                await healthcheckHandler.Handle(healthcheckRequestHandler.Handle(args));
+                await healthcheckHandler.Handle(getHealthcheckRequestHandler.Handle(args));
             }
             catch(Exception e){
                 Console.WriteLine(e.Message);
