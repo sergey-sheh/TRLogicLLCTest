@@ -19,13 +19,14 @@
 
 > dotnet run -1 http://example.com/
 
-*Result: The first argument must be a number in the range 1 to 2147483647*
-
 > dotnet run a http://example.com/
 
 *Result: The first argument must be a number in the range 1 to 2147483647*
 
 > dotnet run 1 http://example.com/ 1
 
+> dotnet run 1
+
 *Result: The number of arguments is not a format of two*
+
 **Enjoy!**
