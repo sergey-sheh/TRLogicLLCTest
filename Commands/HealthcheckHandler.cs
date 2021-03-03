@@ -15,7 +15,7 @@ namespace MyBinary.Commands
             this.getUrlStatusCodeHandler = new GetUrlStatusCodeHandler();
             this.healthcheckResultHandler = new HealthcheckResultHandler();
         }
-        public async Task Handle(GetHealthcheckRequest request){
+        public async Task Handle(Healthcheck request){
             while(true){
                 healthcheckResultHandler.Handle(new HealthcheckResult(){
                     Url = request.Url,

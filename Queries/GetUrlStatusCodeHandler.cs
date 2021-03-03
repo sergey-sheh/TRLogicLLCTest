@@ -1,12 +1,13 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using MyBinary.Commands;
 
 namespace MyBinary.Queries
 {
     public class GetUrlStatusCodeHandler : IGetUrlStatusCodeHandler
     {
-        public async Task<int> Handle(GetHealthcheckRequest request){
+        public async Task<int> Handle(Healthcheck request){
             var client = new HttpClient();
             try{
                 var response = await client.GetAsync(request.Url);
@@ -23,6 +24,6 @@ namespace MyBinary.Queries
     }
     public interface IGetUrlStatusCodeHandler
     {
-        Task<int> Handle(GetHealthcheckRequest request);
+        Task<int> Handle(Healthcheck request);
     }
 }

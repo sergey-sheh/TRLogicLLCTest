@@ -11,7 +11,7 @@ namespace MyBinary
             var healthcheckHandler = new HealthcheckHandler();
             var getHealthcheckRequestHandler = new GetHealthcheckRequestHandler();
             try{
-                await healthcheckHandler.Handle(getHealthcheckRequestHandler.Handle(args));
+                await healthcheckHandler.Handle(getHealthcheckRequestHandler.Handle(new GetHealthcheckRequest(){ Args = args }));
             }
             catch(Exception e){
                 Console.WriteLine(e.Message);
