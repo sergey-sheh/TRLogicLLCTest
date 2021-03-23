@@ -1,6 +1,9 @@
 # TRLogicLLCTest
 # README
 
+## Docs:
+[Specification](SPECIFICATION.md)
+
 ## Build:
 > docker build -t mybinary .
 ## Run:
